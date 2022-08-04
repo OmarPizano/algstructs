@@ -14,3 +14,17 @@ void sort_bubble(int *arr, unsigned int len)
                         if (arr[j] > arr[j+1])
                                 swap(&arr[j], &arr[j+1]);
 }
+
+void sort_insertion(int *arr, unsigned int len)
+{
+        for (unsigned int i = 1; i < len; i++) {
+                int curr = arr[i];
+                int j = i - 1;
+                while (j >= 0 && curr < arr[j]) {
+                        arr[j+1] = arr[j]; // displace
+                        j--;
+                }
+                arr[j+1] = curr; // insert
+
+        }
+}
