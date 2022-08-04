@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 void test_bubble(int *arr, unsigned int len, bool print)
 {
