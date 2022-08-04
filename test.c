@@ -1,14 +1,15 @@
 #include "sort.h"
+#include "utils.h"
 #include <stdio.h>
 #include <time.h>
 
 void test_bubble(int *arr, unsigned int len)
 {
+        print_array(arr, len);
         int time1 = time(NULL);
-        
         sort_bubble(arr, len);
-        
         int time2 = time(NULL);
+        print_array(arr, len);
         printf("BUBBLE EXEC TIME: %d seconds.\n", time2-time1);
 
 }
@@ -16,7 +17,7 @@ void test_bubble(int *arr, unsigned int len)
 int main(void)
 {
         
-        int arr1[15] = {9,43,18,200,38,42,1337,28,98,17,438,2989,28,9,18};
+        int *arr1 = gen_randarray(15, 999, 1337);
 
         test_bubble(arr1, 15);
         

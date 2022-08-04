@@ -7,7 +7,7 @@ all: test
 
 test: test.out
 	./$^
-test.out: test.c sort.c
+test.out: test.c sort.c utils.c
 	$(CC) $(FLG) $^ -o $@
 
 clean:
