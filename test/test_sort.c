@@ -1,5 +1,5 @@
-#include "sort.h"
-#include "utils.h"
+#include "../modules/sort/sort.h"
+#include "../modules/utils/utils.h"
 #include <stdio.h>
 #include <time.h>
 #include <stdbool.h>

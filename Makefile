@@ -1,14 +1,14 @@
 CC = gcc
-FLG = -g -w -Wall
+FLAGS = -g -w -Wall
 
 .PHONY: all clean test
 
-all: test
+all: test_sort
 
-test: test.out
+test_sort: test_sort.out
 	./$^
-test.out: test.c sort.c utils.c
-	$(CC) $(FLG) $^ -o $@
+test_sort.out: test/test_sort.c modules/sort/sort.c modules/utils/utils.c
+	$(CC) $(FLAGS) $^ -o $@
 
 clean:
 	rm -rf *.out
