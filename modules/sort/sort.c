@@ -1,5 +1,5 @@
 #include "sort.h"
-#include <stdio.h>
+#include <stdio.h> // debug
 
 static void swap(int *a, int *b) {
         int tmp = *a;
@@ -26,5 +26,18 @@ void sort_insertion(int *arr, unsigned int len)
                 }
                 arr[j+1] = curr; // insert
 
+        }
+}
+
+void sort_selection(int *arr, unsigned int len)
+{
+        for (unsigned int i = 0; i < len; i++) {
+                int min_index = i;
+                for (unsigned int j = i; j < len; j++) {
+                        if (arr[j] < arr[min_index]) {
+                                min_index = j;
+                        }
+                }
+                swap(&arr[min_index], &arr[i]);
         }
 }
