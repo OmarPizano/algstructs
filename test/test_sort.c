@@ -27,6 +27,17 @@ void test_insertion(int *arr, unsigned int len, bool print)
 
 }
 
+void test_selection(int *arr, unsigned int len, bool print)
+{
+        if (print) print_array(arr, len);
+        int time1 = time(NULL);
+        sort_selection(arr, len);
+        int time2 = time(NULL);
+        if (print) print_array(arr, len);
+        printf("SELECTION EXEC TIME: %d seconds.\n\n", time2-time1);
+
+}
+
 int main(void)
 {
         int *arr1;
@@ -38,6 +49,10 @@ int main(void)
 
         arr1 = gen_randarray(LEN, 999, 1337);
         test_insertion(arr1, LEN, true);
+        free(arr1);
+        
+        arr1 = gen_randarray(LEN, 999, 1337);
+        test_selection(arr1, LEN, true);
         free(arr1);
        
         return 0;
